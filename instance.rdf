@@ -1,0 +1,56 @@
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:courses="http://example.org/"
+>
+    <!-- This is question 2 -->
+
+    <rdf:Description rdf:ID="P01">
+        <rdf:type rdf:resource="courses:Student"/>
+        <courses:has_PersonName>Vardhan</courses:has_PersonName>
+    </rdf:Description>
+    <rdf:Description rdf:ID="P02">
+        <rdf:type rdf:resource="courses:Student"/>
+        <courses:has_PersonName>Akshay</courses:has_PersonName>
+    </rdf:Description>
+    <rdf:Description rdf:ID="P03">
+        <rdf:type rdf:resource="courses:Teacher"/>
+        <courses:has_PersonName>Bansal</courses:has_PersonName>
+    </rdf:Description>
+    <rdf:Description rdf:ID="C01">
+        <rdf:type rdf:resource="courses:Course"/>
+        <courses:has_CourseName>Biology</courses:has_CourseName>
+        <courses:has_students>
+        <rdf:Bag>
+            <rdf:_1 rdf:resource="P01"/>
+            <rdf:_2 rdf:resource="P02"/>
+        </rdf:Bag>
+        </courses:has_students>
+    </rdf:Description>
+    <rdf:Description rdf:ID="C02">
+        <rdf:type rdf:resource="courses:Course"/>
+        <courses:has_CourseName>Physics</courses:has_CourseName>
+        <courses:has_students>
+        <rdf:Bag>
+            <rdf:_1 rdf:resource="P01"/>
+            <rdf:_2 rdf:resource="P02"/>
+        </rdf:Bag>
+        </courses:has_students>
+    </rdf:Description>
+
+
+
+    <!-- This is question 3 -->
+    <rdf:Statement rdf:ID="Opinion_statement_for_course_Physics">
+        <rdf:subject rdf:resource="C02"/>
+        <rdf:predicate rdf:resource="courses:has_teacher"/>
+        <rdf:object rdf:resource="P03"/>
+    </rdf:Statement>
+      
+    <rdf:Statement rdf:ID="Opinion_statement_for_course_Biology">
+        <rdf:subject rdf:resource="C01"/>
+        <rdf:predicate rdf:resource="courses:has_teacher"/>
+        <rdf:object rdf:resouce="P03"/>
+    </rdf:Statement>
+
+</rdf:RDF>

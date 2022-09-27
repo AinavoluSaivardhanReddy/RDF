@@ -1,48 +1,44 @@
 <rdf:RDF 
 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-<rdfs:Class rdf:ID="course">
+<rdfs:Class rdf:ID="Course">
     <rdfs:comment>
         The class for all the courses.
     </rdfs:comment>
     <rdfs:subClassOf rdf:resource = "#Literal"/>
-    <rdfs:subClassOf rdf:resource = "#teacher"/>
-    <rdfs:subClassOf rdf:resource = "#student"/>
+    <rdfs:subClassOf rdf:resource = "#Teacher"/>
+    <rdfs:subClassOf rdf:resource = "#Student"/>
 </rdfs:Class>
 <rdfs:Class rdf:ID="Literal">
-     <rdfs:comment>has_courseName</rdfs:comment>
 </rdfs:Class>
-<rdfs:Class rdf:ID="teacher">
-     <rdfs:comment>has_teacher</rdfs:comment>
-     <rdfs:subClassOf rdf:resource = "#person"/>
+<rdfs:Class rdf:ID="Teacher">
+     <rdfs:subClassOf rdf:resource = "#Person"/>
 </rdfs:Class>
-<rdfs:Class rdf:ID="student">
-     <rdfs:comment>has_students</rdfs:comment>
-     <rdfs:subClassOf rdf:resource = "#person"/>
+<rdfs:Class rdf:ID="Student">
+     <rdfs:subClassOf rdf:resource = "#Person"/>
 </rdfs:Class>
-<rdfs:Class rdf:ID="person">
-     <rdfs:comment>has_students</rdfs:comment>
-     <rdfs:subClassOf rdf:resource = "#course"/>
+<rdfs:Class rdf:ID="Person">
+     <rdfs:subClassOf rdf:resource = "#Literal"/>
 </rdfs:Class>
 <rdf:Property rdf:ID="has_teacher">
     <rdfs:comment>
     The property that relates Course and Teacher
     </rdfs:comment>
-    <rdfs:domain rdf:resource="#course"/>
-    <rdfs:range rdf:resource="#teacher"/>
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="#Teacher"/>
 </rdf:Property>
 <rdf:Property rdf:ID="has_students">
     <rdfs:comment>
     The property that relates Course and Students
     </rdfs:comment>
-    <rdfs:domain rdf:resource="#course"/>
-    <rdfs:range rdf:resource="#student"/>
+    <rdfs:domain rdf:resource="#Course"/>
+    <rdfs:range rdf:resource="#Student"/>
 </rdf:Property>
 <rdf:Property rdf:ID="has_CourseName">
     <rdfs:comment>
     The property that relates Course and CourseName
     </rdfs:comment>
-    <rdfs:domain rdf:resource="#course"/>
+    <rdfs:domain rdf:resource="#Course"/>
     <rdfs:range rdf:resource="#Literal"/>
 </rdf:Property>
 <rdf:Property rdf:ID="has_PersonName">
