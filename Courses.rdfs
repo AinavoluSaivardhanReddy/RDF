@@ -1,0 +1,55 @@
+<rdf:RDF 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+<rdfs:Class rdf:ID="course">
+    <rdfs:comment>
+        The class for all the courses.
+    </rdfs:comment>
+    <rdfs:subClassOf rdf:resource = "#Literal"/>
+    <rdfs:subClassOf rdf:resource = "#teacher"/>
+    <rdfs:subClassOf rdf:resource = "#student"/>
+</rdfs:Class>
+<rdfs:Class rdf:ID="Literal">
+     <rdfs:comment>has_courseName</rdfs:comment>
+</rdfs:Class>
+<rdfs:Class rdf:ID="teacher">
+     <rdfs:comment>has_teacher</rdfs:comment>
+     <rdfs:subClassOf rdf:resource = "#person"/>
+</rdfs:Class>
+<rdfs:Class rdf:ID="student">
+     <rdfs:comment>has_students</rdfs:comment>
+     <rdfs:subClassOf rdf:resource = "#person"/>
+</rdfs:Class>
+<rdfs:Class rdf:ID="person">
+     <rdfs:comment>has_students</rdfs:comment>
+     <rdfs:subClassOf rdf:resource = "#course"/>
+</rdfs:Class>
+<rdf:Property rdf:ID="has_teacher">
+    <rdfs:comment>
+    The property that relates Course and Teacher
+    </rdfs:comment>
+    <rdfs:domain rdf:resource="#course"/>
+    <rdfs:range rdf:resource="#teacher"/>
+</rdf:Property>
+<rdf:Property rdf:ID="has_students">
+    <rdfs:comment>
+    The property that relates Course and Students
+    </rdfs:comment>
+    <rdfs:domain rdf:resource="#course"/>
+    <rdfs:range rdf:resource="#student"/>
+</rdf:Property>
+<rdf:Property rdf:ID="has_CourseName">
+    <rdfs:comment>
+    The property that relates Course and CourseName
+    </rdfs:comment>
+    <rdfs:domain rdf:resource="#course"/>
+    <rdfs:range rdf:resource="#Literal"/>
+</rdf:Property>
+<rdf:Property rdf:ID="has_PersonName">
+    <rdfs:comment>
+    The property that relates Person and PersonName
+    </rdfs:comment>
+    <rdfs:domain rdf:resource="#Person"/>
+    <rdfs:range rdf:resource="#Literal"/>
+</rdf:Property>
+</rdf:RDF>
