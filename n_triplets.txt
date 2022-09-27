@@ -1,0 +1,14 @@
+Subject                     Predicate           Object
+http://example.org/leo      type                http://example.org/Lion
+http://example.org/bill     type                http://example.org/Buffalo
+http://example.org/Species  type                http://www.w3.org/2000/01/rdf-schema#Class
+http://example.org/prey_of  type                http://www.w3.org/1999/02/22-rdf-syntax-ns#Property
+http://example.org/prey_of  domain              http://example.org/Species
+http://example.org/prey_of  range               http://example.org/Species
+http://example.org/Lion     type                http://example.org/Species
+http://example.org/Lion     label xml:lang=”en” lion
+http://example.org/Lion     label xml:lang=”de” Löwe
+http://example.org/Buffalo  type                http://example.org/Species
+http://example.org/Buffalo  label xml:lang="en" buffalo
+http://example.org/Buffalo  label xml:lang="de" Büffel
+http://example.org/Buffalo  ex:prey_o           http://example.org/Lion
